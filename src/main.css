@@ -1,0 +1,22 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.MenuActivo {
+    text-decoration: none;
+    color: white;
+    font-weight:500;
+    
+}
+
+.Menu {
+    text-decoration: none;
+    color: white;
+    font-weight:500;
+}
+
+.Banner {
+    --opacidad-negro: 0.5;
+    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url("banner.jpg");
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}

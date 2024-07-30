@@ -1,0 +1,22 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.container{
+    border: none;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+.CardImg{
+  width: 350px;
+  border: 1px solid #00000026;
+}
+  
+/* .card {
+  border: none;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+} */
