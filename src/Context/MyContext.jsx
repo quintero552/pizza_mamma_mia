@@ -25,8 +25,8 @@ const MyContextProvider = ({children}) => {
       if(productoEnCarrito){ // si ya hay un producto agregado, sumame otro
         setCarrito(carrito.map((item) => item.id === producto.id ? {...productoEnCarrito, contador: item.price + item.price} : item))
       }else{ // sino agrega un producto nuevo
-        //setCarrito([...carrito, producto])
-        console.log('ELSE NO ==>', setCarrito([...carrito, producto]))
+        setCarrito([...carrito, {...producto, contador: + 1}])
+        //console.log('ELSE NO ==>', setCarrito([...carrito, producto]))
       }
       //console.log('PRODUCTOeNcARRITO', carrito)
       

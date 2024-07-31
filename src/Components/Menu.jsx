@@ -3,9 +3,15 @@ import { NavLink } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { MyContext } from "../Context/MyContext";
 const Menu = () => {
-  // const { carrito} = useContext(MyContext);
+  const { carrito} = useContext(MyContext);
+
+  const [valor, setValor] = useState(carrito)
+  
+  const recorreValor = carrito.find((item) => item.id === carrito)
+  console.log('===> menu',recorreValor)
+
   // const [show, setShow] = useState({});
-  // console.log('===> menu',show)
+  // 
 
 
   // const valor = (contador) => {
