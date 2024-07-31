@@ -8,23 +8,22 @@ const Detalle = () => {
     
   const { pizzas, carrito, addproducto } = useContext(MyContext)
 
-  console.log('CARRITO', carrito)
 
-
-
+  //console.log('CARRITODESPRODUC', producto)
   const navigator = useNavigate()  
 
   const handleCardClick = (id) => {
     navigator(`/pizza/${id}`);
   };
 
+  //const valorCarro = () => addproducto(pizzas.id)
   
 
    return (    
      <Container>
       {pizzas?.map((item) => {
         const SET = () => handleCardClick(item.id)
-        const valorCarro = () => addproducto(item.price)
+        const valorCarro = () => addproducto(item)
         
          return(
          <Card className="CardImg" key={item.id} >

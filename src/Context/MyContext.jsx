@@ -17,14 +17,21 @@ const MyContextProvider = ({children}) => {
         const response = await fetch(API)
         const data = await response.json()
         setPizzas(data)
-        console.log('Pricipal ==>',data)
     }
 
-    const addproducto = (pric) => {
-      //dentro de una variable agregamos el valor
-      const carritoPrecio = carrito.find()
-     console.log(carritoPrecio)
+    const addproducto = (producto) => {
+      // agregamos una constante donde validara dentro del array si existe el producto
+      const productoEnCarrito = carrito.find((item) => item.id === producto.id);
+      if(productoEnCarrito){ // si ya hay un producto agregado, sumame otro
+        setCarrito(carrito.map((item) => item.id === producto.id ? {...productoEnCarrito, contador: item.price + item.price} : item))
+      }else{ // sino agrega un producto nuevo
+        //setCarrito([...carrito, producto])
+        console.log('ELSE NO ==>', setCarrito([...carrito, producto]))
+      }
+      //console.log('PRODUCTOeNcARRITO', carrito)
+      
     }
+    
 
     const resultados = {
         pizzas,

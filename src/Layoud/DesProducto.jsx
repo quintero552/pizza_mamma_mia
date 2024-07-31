@@ -68,7 +68,7 @@ const DesProducto = () => {
                Precio: ${producto.price}
              </h1>
              <div>
-               <Button onClick={() => addproducto(producto.price)} style={{ margin: "0 10px 13px" }} variant="danger">
+               <Button onClick={() => addproducto(producto)} style={{ margin: "0 10px 13px" }} variant="danger">
                  Añadir 🛒
                </Button>
              </div>

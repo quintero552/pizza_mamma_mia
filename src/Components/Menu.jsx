@@ -1,9 +1,21 @@
 import {Container, Nav, Navbar} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { MyContext } from "../Context/MyContext";
 const Menu = () => {
-  const {pizzas, addproducto} = useContext(MyContext);
+  // const { carrito} = useContext(MyContext);
+  // const [show, setShow] = useState({});
+  // console.log('===> menu',show)
+
+
+  // const valor = (contador) => {
+  //   const valorAr = show.find((item) => item.contador === contador)    
+  //   setShow(valorAr)
+  // }
+
+  // useEffect(() => {
+  //   valor()
+  // },[])
 
   
   //console.log('MENU>>',pizzas)
@@ -16,7 +28,8 @@ const Menu = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink className={Banner}>🛒</NavLink>
-            <NavLink to="/detallepedido" className={Banner}></NavLink>
+            {/* <p className={Banner} style={{marginBottom: 0}}>${valor.price}</p> */}
+            {/* <NavLink to="/detallepedido" className={Banner}>${valor.contador}</NavLink> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
