@@ -11,8 +11,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0 eslint . --fix",
+    "preview": "vite preview",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -25,7 +26,8 @@
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
-    "standard": "^17.1.0",
+    "eslint": "^9.8.0",
+    "prettier": "^3.3.3",
     "vite": "^5.1.4"
   }
 }
