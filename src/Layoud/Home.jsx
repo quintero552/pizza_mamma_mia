@@ -1,7 +1,6 @@
-import Detalle from "../Components/Detalle"
+import Detalle from "../Components/Detalle";
 
 const Home = () => {
-
   return (
     <>
       <div className="Banner">
@@ -14,6 +13,6 @@ const Home = () => {
       <Detalle />
     </>
   );
-}
+};
 
-export default Home
+export default Home;

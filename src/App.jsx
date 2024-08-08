@@ -1,7 +1,7 @@
-import './App.css'
-import Menu from "./Components/Menu"
+import "./App.css";
+import Menu from "./Components/Menu";
 import { Route, Routes } from "react-router-dom";
-import {Home, DesProducto, DetallePedido, NotFound} from "./Layoud/Index";
+import { Home, DesProducto, DetallePedido, NotFound } from "./Layoud/Index";
 import MyContextProvider from "./Context/MyContext";
 
 const App = () => {
@@ -16,6 +16,6 @@ const App = () => {
       </Routes>
     </MyContextProvider>
   );
-}
+};
 
-export default App
+export default App;

@@ -1,46 +1,32 @@
-import {Container, Nav, Navbar} from 'react-bootstrap';
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext} from "react";
 import { MyContext } from "../Context/MyContext";
 const Menu = () => {
-  const { carrito} = useContext(MyContext);
-
-  const [valor, setValor] = useState(carrito)
+  const { carrito } = useContext(MyContext);
+  const total = carrito.reduce((acumulador, valorActual) => acumulador + valorActual.price * valorActual.count, 0)
   
-  const recorreValor = carrito.find((item) => item.id === carrito)
-  console.log('===> menu',recorreValor)
-
-  // const [show, setShow] = useState({});
-  // 
-
-
-  // const valor = (contador) => {
-  //   const valorAr = show.find((item) => item.contador === contador)    
-  //   setShow(valorAr)
-  // }
-
-  // useEffect(() => {
-  //   valor()
-  // },[])
-
-  
-  //console.log('MENU>>',pizzas)
-    const Banner = (isActive) => isActive ? 'MenuActivo' : 'Menu';
+  const Banner = (isActive) => (isActive ? "MenuActivo" : "Menu");
   return (
     <Navbar expand="lg" className="bg-info">
-      <Container style={{marginTop: "0"}}>
-        <NavLink to="/" className={Banner} style={{fontWeight: 500, fontSize: 'large'}}>🍕 Pizzería Mamma Mia!</NavLink>
+      <Container style={{ marginTop: "0" }}>
+        <NavLink
+          to="/"
+          className={Banner}
+          style={{ fontWeight: 500, fontSize: "large" }}
+        >
+          🍕 Pizzería Mamma Mia!
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink className={Banner}>🛒</NavLink>
-            {/* <p className={Banner} style={{marginBottom: 0}}>${valor.price}</p> */}
-            {/* <NavLink to="/detallepedido" className={Banner}>${valor.contador}</NavLink> */}
+            <NavLink to="/detallepedido" className={Banner}>${total}</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
